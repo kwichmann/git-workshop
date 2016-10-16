@@ -1,0 +1,58 @@
+<p><link id="linkstyle" rel="stylesheet" href="../foghorn.css"> <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"></p>
+<h1 id="processing-intro-coding-pirates-diku">Processing intro : Coding Pirates DIKU</h1>
+<h2 id="streg-tegninger">Streg tegninger</h2>
+<p>Tast følgende eksempel ind:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">ellipse</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">150</span><span class="op">,</span> <span class="dv">150</span>)<span class="op">;</span>
+<span class="at">ellipse</span>(<span class="dv">135</span><span class="op">,</span> <span class="dv">125</span><span class="op">,</span> <span class="dv">75</span><span class="op">,</span> <span class="dv">75</span>)<span class="op">;</span>
+<span class="at">ellipse</span>(<span class="dv">260</span><span class="op">,</span> <span class="dv">130</span><span class="op">,</span> <span class="dv">75</span><span class="op">,</span> <span class="dv">75</span>)<span class="op">;</span></code></pre></div>
+<h3 id="eller-prøv-i-stedet">Eller prøv i stedet:</h3>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">rect</span>(<span class="dv">50</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">300</span><span class="op">,</span><span class="dv">200</span>)<span class="op">;</span>
+<span class="at">ellipse</span>(<span class="dv">200</span><span class="op">,</span><span class="dv">200</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">100</span>)<span class="op">;</span>
+<span class="at">rect</span>(<span class="dv">270</span><span class="op">,</span><span class="dv">110</span><span class="op">,</span><span class="dv">70</span><span class="op">,</span><span class="dv">40</span>)<span class="op">;</span>
+<span class="at">rect</span>(<span class="dv">70</span><span class="op">,</span><span class="dv">95</span><span class="op">,</span><span class="dv">30</span><span class="op">,</span><span class="dv">5</span>)<span class="op">;</span></code></pre></div>
+<h3 id="eller">Eller:</h3>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">triangle</span>(<span class="dv">200</span><span class="op">,</span><span class="dv">150</span><span class="op">,</span><span class="dv">250</span><span class="op">,</span><span class="dv">280</span><span class="op">,</span><span class="dv">150</span><span class="op">,</span><span class="dv">280</span>)<span class="op">;</span>
+<span class="at">ellipse</span>(<span class="dv">200</span><span class="op">,</span><span class="dv">115</span><span class="op">,</span><span class="dv">70</span><span class="op">,</span><span class="dv">70</span>)<span class="op">;</span>
+
+<span class="at">line</span>(<span class="dv">183</span><span class="op">,</span><span class="dv">191</span><span class="op">,</span><span class="dv">146</span><span class="op">,</span><span class="dv">174</span>)<span class="op">;</span>
+<span class="at">line</span>(<span class="dv">217</span><span class="op">,</span><span class="dv">191</span><span class="op">,</span><span class="dv">254</span><span class="op">,</span><span class="dv">174</span>)<span class="op">;</span>
+<span class="at">line</span>(<span class="dv">180</span><span class="op">,</span><span class="dv">280</span><span class="op">,</span><span class="dv">180</span><span class="op">,</span><span class="dv">300</span>)<span class="op">;</span>
+<span class="at">line</span>(<span class="dv">220</span><span class="op">,</span><span class="dv">280</span><span class="op">,</span><span class="dv">220</span><span class="op">,</span><span class="dv">300</span>)<span class="op">;</span></code></pre></div>
+<p>Prøv at tegne en bil:</p>
+<div class="figure">
+<img src="pics/bil-streg.png" alt="bil" />
+<p class="caption">bil</p>
+</div>
+<h1 id="farver">Farver</h1>
+<p>Farvelæg tegningerne med <code>fill</code>-kommandoen. Det handler om at sætte <code>fill</code> ind det rigtige sted!</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">fill</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span>)<span class="op">;</span>       <span class="co">// sort</span>
+<span class="at">fill</span>(<span class="dv">255</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span>)<span class="op">;</span>     <span class="co">// rød</span>
+<span class="at">fill</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">255</span><span class="op">,</span><span class="dv">0</span>)<span class="op">;</span>     <span class="co">// grøn</span>
+<span class="at">fill</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">255</span>)<span class="op">;</span>     <span class="co">// blå</span>
+<span class="at">fill</span>(<span class="dv">255</span><span class="op">,</span><span class="dv">255</span><span class="op">,</span><span class="dv">0</span>)<span class="op">;</span>   <span class="co">// gul</span>
+<span class="at">fill</span>(<span class="dv">255</span><span class="op">,</span><span class="dv">255</span><span class="op">,</span><span class="dv">255</span>)<span class="op">;</span> <span class="co">// hvid</span></code></pre></div>
+<p><img src="pics/bil-farvet.png" alt="bil" /> <img src="pics/mickey_simpel.png" alt="Mickey" /></p>
+<h3 id="prøv-også-kommandoen">Prøv også kommandoen:</h3>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">  <span class="at">noStroke</span>()<span class="op">;</span></code></pre></div>
+<h2 id="opgaver">Opgaver</h2>
+<ul>
+<li>Kan du tegne en blomst?</li>
+</ul>
+<div class="figure">
+<img src="pics/blomst.png" />
+
+</div>
+<ul>
+<li>En pingvin?</li>
+</ul>
+<div class="figure">
+<img src="pics/pingvin.png" />
+
+</div>
+<ul>
+<li>Pikachu?</li>
+</ul>
+<div class="figure">
+<img src="pics/pikachu.png" />
+
+</div>
