@@ -1,0 +1,276 @@
+\documentclass[footexclude,twocolumn,DIV25,fontsize=10pt]{scrreprt} 
+
+% Author: Nate Murray (based on Steve Tayon's Clojure cheat sheet)
+% Comments, errors, suggestions: nate@natemurray.com
+
+% License
+% Eclipse Public License v1.0
+% http://opensource.org/licenses/eclipse-1.0.php
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\usepackage[table]{xcolor}
+
+% Set column space
+\setlength{\columnsep}{0.25em}
+
+% Define colours
+\definecolorset{hsb}{}{}{red,0,.4,0.95;orange,.1,.4,0.95;green,.25,.4,0.95;yellow,.15,.4,0.95}
+\definecolorset{hsb}{}{}{blue,.55,.4,0.95;purple,.7,.4,0.95;pink,.8,.4,0.95;blue2,.58,.4,0.95}
+\definecolorset{hsb}{}{}{magenta,.9,.4,0.95;green2,.29,.4,0.95}
+
+% Redefine sections
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+	{-1.7ex}{0.7ex}{\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}
+	{-1.7ex}{0.5ex}{\normalfont\normalsize\bfseries}}
+\makeatother
+
+% No section numbers
+\setcounter{secnumdepth}{0}
+
+% No indentation
+\setlength{\parindent}{0em}
+
+% No header and footer
+\pagestyle{empty}
+
+
+% A few shortcuts
+\newcommand{\cmd}[1] {\texttt{\textbf{{#1}}}}
+\newcommand{\cmdline}[1] {
+	\begin{tabularx}{\hsize}{X}
+			\texttt{\textbf{{#1}}}
+	\end{tabularx}
+}
+
+\newcommand{\colouredbox}[2] {
+	\colorbox{#1!40}{
+		\begin{minipage}{0.95\linewidth}
+			{
+			\rowcolors[]{1}{#1!20}{#1!10}
+			#2
+			}
+		\end{minipage}
+	}
+}
+
+% redefine enumerate env for closer spacing
+\renewenvironment{enumerate}%
+  {\begin{list}{\arabic{enumi}.}%
+     {\topsep=0in\itemsep=0in\parsep=0in\partopsep=0in\usecounter{enumi}}%
+   }{\end{list}}
+
+
+\begin{document}
+\twocolumn[
+  \begin{@twocolumnfalse}
+\centerline{\Large{\textbf{Git Cheat Sheet}}}
+\vspace{1cm}
+  \end{@twocolumnfalse}
+]
+
+%% \centerline{{\large{\textbf{\textit{git: first it sucks, then it's awesome}}}}}
+
+\section{Basics}
+
+\colouredbox{green}{
+\subsection{Dokumentation \textmd{\textrm{(http://progit.org/book/)}}}
+\cmdline{git help [cmd]}
+}
+
+\colouredbox{magenta}{
+\subsection{Følg projekter}
+\begin{tabularx}{\hsize}{lX}
+\cmd{git clone <url>} & \textit{Hent et helt projekt} \\
+\cmd{git pull} & \textit{Hent og merge opdateringer}  \\
+\end{tabularx}
+
+\subsection{Opret repository}
+\begin{tabularx}{\hsize}{lX}
+\cmd{git init} & \textit{Opret git-repository i denne mappe} \\
+\cmd{git add .} & \textit{'Stage' alt} \\
+\cmd{git commit} & \textit{Commit alt (gem snapshot)} \\
+\end{tabularx}
+
+\subsection{Filer}
+\begin{tabularx}{\hsize}{lX}
+\cmd{git add <file>} & \textit{Stage en fil} \\
+\cmd{git rm <file>} & \textit{Stage sletning af en fil} \\
+\cmd{git mv <file>} & \textit{Stage flytning af en fil} \\
+\end{tabularx}
+
+\subsection{Committing}
+\begin{tabularx}{\hsize}{lX}
+\cmd{git commit} & \textit{Commit alt 'staget'} \\
+\end{tabularx}
+}
+
+
+\colouredbox{blue}{
+\subsection{Opsætning}
+\begin{tabularx}{\hsize}{lX}
+Name:   & \cmd{git config --{}--global user.name \textbackslash}\\
+        & \cmd{  "John Doe"}\\
+Email:  & \cmd{git config --{}--global user.email \textbackslash}\\
+        & \cmd{  "email@example.com"}\\
+\end{tabularx}
+
+\subsection{Første repository}
+
+\begin{tabularx}{\hsize}{lX}
+ & \cmd{cd $\sim$/projects} \\
+ & \cmd{mkdir -p demo} \\
+ & \cmd{cd demo} \\
+ & \cmd{git init} \\
+ & \cmd{git status} \\
+ & \cmd{ls -a} \\
+ & \cmd{echo "hello world" > test.txt} \\
+ & \cmd{git status} \\
+ & \cmd{git add test.txt} \\
+ & \cmd{git status} \\
+ & \cmd{git commit -m "tilføj version 1.0"} \\
+ & \cmd{git status} \\
+\end{tabularx}
+
+}
+
+\colouredbox{green}{
+\subsection{Browsing}
+\begin{tabularx}{\hsize}{lX}
+\cmd{git status} & \\
+\cmd{git log} & \\
+\cmd{git blame <file>} &  \\
+\cmd{git diff} &  \\
+\end{tabularx}
+}
+\newpage
+
+\section{Videre}
+
+% \subsection{Aliases}
+% \begin{tabularx}{\hsize}{lX}
+% st:&\cmd{git config --global alias.st status} \\
+% ci:&\cmd{git config --global alias.ci commit} \\
+% ca:&\cmd{git config --global alias.ca commit -a} \\
+% \end{tabularx}
+% }
+
+
+% \colouredbox{green}{
+% \section{GUI}
+% \begin{tabularx}{\hsize}{lX}
+% Commits: & \cmd{gitx} \\
+% Merge: & \cmd{git mergetool -t opendiff} \\
+% \end{tabularx}
+
+% }
+
+% \colouredbox{orange}{
+% \section{Internals}
+
+% \begin{tabularx}{\hsize}{lX}
+% View Log: & \cmd{git log} \\
+% Show: & \cmd{git show a8dn3  \# sha}  \\
+% Cat: & \cmd{git cat-file -p 9s2j \# sha} \\
+% \end{tabularx}
+
+% }
+
+\colouredbox{yellow}{
+\section{Branching \& Merging}
+\begin{tabularx}{\hsize}{lX}
+List:     & \cmd{git branch} \\
+Create:   & \cmd{git branch testing} \\
+Checkout: & \cmd{git checkout testing} \\
+          & \cmd{\# work, make some commits} \\
+Back:     & \cmd{git checkout master} \\
+Merge:    & \cmd{git merge testing} \\
+Create:   & \cmd{git checkout -b new-branch} \\
+Delete:   & \cmd{git branch -d new-branch} \\
+\end{tabularx}
+}
+
+
+
+
+
+\colouredbox{blue2}{
+\section{Remotes}
+\begin{tabularx}{\hsize}{lX}
+Clone: &     \cmd{git clone <url>} \\
+List: &     \cmd{git remote -v} \\
+Send: &     \cmd{git push } \\
+      &     \cmd{git push origin master} \\
+Recv: &     \cmd{git pull } \\
+      &     \cmd{git pull origin master} \\
+Add:  &     \cmd{git remote add <name> <url>} \\
+Fetch:&     \cmd{git fetch name} \\
+Checkout:&  \cmd{git checkout <name/master>} \\
+\end{tabularx}
+}
+
+% \colouredbox{red}{
+% \section{3 principper}
+% \begin{enumerate}{}{}
+%   \item (Næsten) alt er lokalt
+%   \item Git commits er snapshots
+%   \item Branching is cheap, use it often
+% \end{enumerate}
+% }
+
+\colouredbox{yellow}{
+\section{Next Steps}
+\begin{tabularx}{\hsize}{lX}
+  & \cmd{git tag <name>} \\
+  & \cmd{git rebase <commit-id>} \\
+  & \cmd{git cherry-pick <commit-id>} \\
+  & \cmd{git bisect} \\
+  & \cmd{git-svn} \\
+  & hooks \\
+  & tracking branches \\
+  & submodules \\
+  & interactive staging \\
+  & squashing commits \\
+  & repository hosting \\
+  & patches via email \\
+  & \cmd{gitjour} \\
+\end{tabularx}
+}
+
+
+
+
+
+
+\begin{flushright}
+\footnotesize
+\rule{0.7\linewidth}{0.25pt}
+\verb!Adapted from Cheat Sheet by Nate Murray:          ! \\
+\verb!! \\
+\verb!$Revision: 1.1, $Date: August 31, 2010!\\
+\verb!Nate Murray (nmurray@xcombinator.com)!
+\verb!See also: http://book.git-scm.com/!
+\verb!          http://git.or.cz/course/svn.html!
+\verb!Based on Steve Taylon's Clojure Cheat Sheet!
+\end{flushright}
+
+% history
+%
+% v1.00
+% First version based on API documentation
+% http://incanter.org/docs/api
+% LaTeX format based on Steve Tayon's Clojure Cheat Sheet
+%
+% v1.1
+% Removed redundancies from Charts and Plots section
+
+\end{document}
+
