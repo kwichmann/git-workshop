@@ -1,5 +1,4 @@
 # git-workshop
-Repo til Git &amp; markdown workshop i coding pirates
+Repo til `git` &amp; `MarkDown` workshop i Coding Pirates
 
-Repoet indeholder et cheatsheet til git og og et til markdown, samt processing
-undervisningsmateriale skrevet i markdown
+Repoet indeholder et [cheat sheet](https://en.wikipedia.org/wiki/Cheat_sheet) til `git` og og et til `MarkDown` samt `Processing`-undervisningsmateriale skrevet i `MarkDown`
